@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vector model</title>
+     <link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+</head>
+<body>
+   <center>
+    <form action="/search2" method="post" >
+       <div class="form-group">
+           <label class="form-control-plaintext"> Enter your query and choice the method :</label>
+           <input class="form-control" type="text" name="query" required/><br>
+
+           <select name="way" required>
+               <option>Random</option>
+               <option>Not_Random</option>
+
+           </select><br><br>
+           
+           <input class="btn btn-success"  type="submit" name="search" value="Search" ><br><br>
+           
+      </div>
+    </form>
+            <label>{{err}}</label>
+            <h1> Sorting by vector space model</h1>
+            <ol>
+		      {% for x in list %}
+                    <hr>
+		     		<li>{{x}}</li>
+		      {% endfor %}
+	       </ol>
+           <h1> Sorting by Link analysis</h1>
+           <label>Authority</label>
+            <ol>
+		      {% for x in list1 %}
+                    <hr>
+		     		<li>{{x}}</li>
+		      {% endfor %}
+	       </ol>
+           <label>Hubs</label>
+           <ol>
+		      {% for x in list2 %}
+                    <hr>
+		     		<li>{{x}}</li>
+		      {% endfor %}
+	       </ol>	       </ol>
+
+
+
+   </center>
+        <main  class="container" >   
+            <div  align="left">
+                    <embed type="image/svg+xml" src="{{graph_data}}" style="max-width:800px"/>
+            </div>
+        </main> 
+</body>
+</html>
